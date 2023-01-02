@@ -12,7 +12,7 @@ In this homework activity, you will use all the skills you have learned until no
 
 The first will be a personal finance planner that will allow users to visualize their savings composed by investments in shares and cryptocurrencies to assess if they have enough money as an emergency fund.
 
-The second tool will be a retirement planning tool that will use the Alpaca API to fetch historical closing prices for a retirement portfolio composed of stocks and bonds, then run Monte Carlo simulations to project the portfolio performance at 30 years. You will then use the Monte Carlo data to calculate the expected portfolio returns given a specific initial investment amount.
+The second tool will be a retirement planning tool that will use the Yahoo Finance Library to fetch historical closing prices for a retirement portfolio composed of stocks and bonds, then run Monte Carlo simulations to project the portfolio performance at 30 years. You will then use the Monte Carlo data to calculate the expected portfolio returns given a specific initial investment amount.
 
 ---
 
@@ -28,15 +28,13 @@ The second tool will be a retirement planning tool that will use the Alpaca API 
 
 This homework will utilize two APIs:
 
-* The **Alpaca Markets API** will be used to pull historical stocks and bonds information.
-
 * The **Alternative Free Crypto API** will be used to retrieve Bitcoin and Ethereum prices.
 
 The documentation for these APIs can be found via the following links:
 
 * [Free Crypto API Documentation](https://alternative.me/crypto/api/)
 
-* [AlpacaDOCS](https://alpaca.markets/docs/)
+* [Yahoo Finance Library - A Complete Guide](https://algotrading101.com/learn/yfinance-guide/)
 ---
 
 ## Instructions
@@ -67,19 +65,13 @@ Use the starter Jupyter notebook to complete the following steps.
 
 4. Compute the portfolio value of cryptocurrencies and print the results.
 
-#### Collect Investments Data Using Alpaca: `SPY` (stocks) and `AGG` (bonds)
-
-**Important:** Remember to create a `.env` file in your working directory to store the values of your Alpaca API key and Alpaca secret key.
+#### Collect Investments Data Using Yahoo Finance: `SPY` (stocks) and `AGG` (bonds)
 
 1. Create two variables named `my_agg` and `my_spy` and set them equal to `200` and `50`, respectively.
 
-2. Set the Alpaca API key and secret key variables, then create the Alpaca API object using the `tradeapi.REST` function from the Alpaca SDK.
+4. Get the current closing prices for `SPY` and `AGG` using Yahoo Finance ` function. Transform the function's response to a Pandas DataFrame and preview the data.
 
-3. Format the current date as ISO format. You may change the date set in the starter code to the current date.
-
-4. Get the current closing prices for `SPY` and `AGG` using Alpaca's `get_bars()` function. Transform the function's response to a Pandas DataFrame and preview the data.
-
-5. Pick the `SPY` and `AGG` close prices from the Alpaca's `get_bars()` DataFrame response and store them as Python variables. Print the closing values for validation.
+5. Pick the `SPY` and `AGG` close prices from the Yahoo Finance ` DataFrame response and store them as Python variables. Print the closing values for validation.
 
 6. Compute the value in dollars of the current amount of shares and print the results.
 
@@ -93,7 +85,7 @@ In this section, you will assess the financial health of the credit union's memb
 
     **Hint:** The `df_savings` DataFrame should have one column named `amount` and two rows where `crypto` and `shares` are the index values:
 
-    ![df_savings](Images/df_savings.png)
+    ![df_savings](images/df_savings.png)
 
 3. Use the `df_savings` DataFrame to plot a pie chart to visualize the composition of personal savings.
 
@@ -107,13 +99,13 @@ In this section, you will assess the financial health of the credit union's memb
 
 ### Part 2 - Retirement Planning
 
-In this section, you will use the Alpaca API to fetch historical closing prices for a retirement portfolio and then Use the MCForecastTools toolkit to create Monte Carlo simulations to project the portfolio performance at `30` years. You will then use the Monte Carlo data to answer questions about the portfolio.
+In this section, you will use the Yahoo Finance library to fetch historical closing prices for a retirement portfolio and then Use the MCForecastTools toolkit to create Monte Carlo simulations to project the portfolio performance at `30` years. You will then use the Monte Carlo data to answer questions about the portfolio.
 
 Follow the steps outlined in the starter notebook to complete the following:
 
 #### Monte Carlo Simulation
 
-1. Use the Alpaca API to fetch five years historical closing prices for a traditional `40/60` portfolio using the `SPY` and `AGG` tickers to represent the `60%` stocks (`SPY`) and `40%` bonds (`AGG`) composition of the portfolio. Make sure to convert the API output to a DataFrame and preview the output.
+1. Use the Yahoo Finance Library to fetch five years historical closing prices for a traditional `40/60` portfolio using the `SPY` and `AGG` tickers to represent the `60%` stocks (`SPY`) and `40%` bonds (`AGG`) composition of the portfolio. Make sure to convert the API output to a DataFrame and preview the output.
 
     > *Note*: In Monte-Carlo Simulation, getting data as far back as possible matters, because if we simulate using only small amounts of data during a recent time when markets are booming, or instead falling precipitously, a Monte-Carlo Analysis will inadvertently extrapolate this temporary market movement too far into the future. Getting data over a longer time period mitigates this effect.
 
@@ -166,7 +158,7 @@ Try adjusting the portfolio to either include more risk (a higher stock than bon
 ##### To receive all points, your code must:
 
 * Collect crypto prices using the requests Library. (10 points)
-* Collect investments data using Alpaca: SPY (stocks) and AGG (bonds). (10 points)
+* Collect investments data using Yahoo Finance: SPY (stocks) and AGG (bonds). (10 points)
 * Perform a savings health analysis. (15 points)
 
 
