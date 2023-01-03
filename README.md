@@ -18,9 +18,9 @@ The second tool will be a retirement planning tool that will use the Yahoo Finan
 
 ### Files
 
-* [Personal Finance Planner starter code](Starter_Code/financial-planner.ipynb)
+* [Personal Finance Planner starter code](Starter_Code/Instructions/Starter_Code/financial-planner.ipynb)
 
-* [MCForecastTools toolkit](Starter_Code/MCForecastTools.py)
+* [MCForecastTools toolkit](Starter_Code/Instructions/Starter_Code/MCForecastTools.py)
 
 ---
 
